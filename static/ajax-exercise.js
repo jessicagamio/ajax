@@ -4,8 +4,12 @@
 // PART 1: SHOW A FORTUNE
 
 function showFortune(evt) {
+  $.get('/fortune', (fortune) => {
+    const fortuneDiv = document.querySelector('#fortune-text');
+    fortuneDiv.innerHTML = fortune;
+    }
+  )
 
-    // TODO: get the fortune and show it in the #fortune-text div
 }
 
 $('#get-fortune-button').on('click', showFortune);
